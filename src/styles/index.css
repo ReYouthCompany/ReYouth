@@ -901,6 +901,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
+  align-items: stretch;
 }
 
 @media (max-width: 1024px) {
@@ -923,6 +924,8 @@ p {
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
@@ -975,6 +978,7 @@ p {
   flex-direction: column;
   gap: var(--space-xs);
   margin-bottom: var(--space-md);
+  flex-grow: 1;
 }
 
 .product-feature {
@@ -990,6 +994,10 @@ p {
   height: 16px;
   color: var(--color-accent);
   flex-shrink: 0;
+}
+
+.product-card .btn {
+  margin-top: auto;
 }
 
 /* ========================================

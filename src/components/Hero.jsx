@@ -33,7 +33,7 @@ const Hero = () => {
                 {/* Left Side - Text Content */}
                 <div className="hero-text-side">
                     <div className="hero-badge">
-                        <span>Preventive Health-Tech</span>
+                        <span>Book a Free Consultation now!</span>
                     </div>
 
                     <h1>

@@ -132,7 +132,7 @@ const ProductShowcase = () => {
                                 className={`btn ${product.featured ? 'btn-primary' : 'btn-secondary'}`}
                                 style={{ width: '100%' }}
                             >
-                                {product.featured ? 'Start Now' : 'Learn More'}
+                                Start Now
                             </a>
                         </div>
                     ))}
