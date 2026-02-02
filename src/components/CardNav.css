@@ -202,7 +202,7 @@
     }
 
     .card-nav-top {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.75rem;
         justify-content: space-between;
     }
 
@@ -214,6 +214,15 @@
         position: static;
         transform: none;
         order: 1;
+        gap: 0.4rem;
+    }
+
+    .logo {
+        height: 24px;
+    }
+
+    .logo-text {
+        font-size: 0.85rem;
     }
 
     .card-nav-cta-button {
@@ -242,5 +251,40 @@
 
     .nav-card-link {
         font-size: 0.9rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    .card-nav-container {
+        width: 95%;
+        top: 0.75em;
+    }
+
+    .card-nav-top {
+        padding: 0.5rem;
+    }
+
+    .logo-text {
+        font-size: 0.75rem;
+    }
+
+    .logo {
+        height: 22px;
+    }
+
+    .hamburger-line {
+        width: 22px;
+    }
+}
+
+/* Ultra-small phones */
+@media (max-width: 320px) {
+    .logo-text {
+        display: none;
+    }
+
+    .logo {
+        height: 26px;
     }
 }
