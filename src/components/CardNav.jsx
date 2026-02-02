@@ -161,9 +161,10 @@ const CardNav = ({
                     </div>
 
                     <Link to="/" className="logo-container" onClick={closeMenu}>
-                        {logo ? (
+                        {logo && (
                             <img src={logo} alt={logoAlt} className="logo" />
-                        ) : (
+                        )}
+                        {logoText && (
                             <span className="logo-text">{logoText}</span>
                         )}
                     </Link>

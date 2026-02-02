@@ -34,8 +34,8 @@ const Header = () => {
 
     return (
         <CardNav
+            logo="/reyou-logo.png"
             logoText="The ReYouth Company"
-            logoAlt="ReYouth"
             items={items}
             baseColor="rgba(10, 10, 10, 0.9)"
             menuColor="#ffffff"

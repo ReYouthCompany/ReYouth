@@ -74,6 +74,7 @@
 .logo-container {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -82,14 +83,14 @@
 }
 
 .logo {
-    height: 32px;
+    height: 28px;
     width: auto;
 }
 
 .logo-text {
     font-family: 'Clash Display', sans-serif;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #ffffff;
     white-space: nowrap;
     letter-spacing: -0.02em;
