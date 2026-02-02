@@ -1,0 +1,194 @@
+/* MagicBento Testimonials - ReYouth Theme */
+
+:root {
+    --bento-accent: 122, 231, 199;
+    --bento-glow: rgba(122, 231, 199, 0.2);
+    --bento-border: rgba(122, 231, 199, 0.3);
+    --bento-bg: #0a0a0a;
+    --bento-surface: #111111;
+    --bento-border-default: #1a1a1a;
+}
+
+.testimonial-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .testimonial-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .testimonial-bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.magic-bento-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 280px;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--bento-border-default);
+    background: var(--bento-surface);
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    --glow-x: 50%;
+    --glow-y: 50%;
+    --glow-intensity: 0;
+    --glow-radius: 200px;
+}
+
+.magic-bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Content */
+.magic-bento-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.magic-bento-card__quote {
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Footer with author */
+.magic-bento-card__footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--bento-border-default);
+}
+
+.magic-bento-card__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(122, 231, 199, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: rgb(122, 231, 199);
+    flex-shrink: 0;
+}
+
+.magic-bento-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.magic-bento-card__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.magic-bento-card__role {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Text auto-hide */
+.magic-bento-card--text-autohide .magic-bento-card__quote {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Border glow effect */
+.magic-bento-card--border-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+            rgba(122, 231, 199, calc(var(--glow-intensity) * 0.8)) 0%,
+            rgba(122, 231, 199, calc(var(--glow-intensity) * 0.4)) 30%,
+            transparent 60%);
+    border-radius: inherit;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.magic-bento-card--border-glow:hover::after {
+    opacity: 1;
+}
+
+.magic-bento-card--border-glow:hover {
+    border-color: var(--bento-border);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.3),
+        0 0 40px var(--bento-glow);
+}
+
+/* Particle container */
+.particle-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.particle::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: rgba(122, 231, 199, 0.2);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.particle-container:hover {
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.2),
+        0 0 40px var(--bento-glow);
+}
+
+/* Global spotlight styles */
+.global-spotlight {
+    mix-blend-mode: screen;
+    will-change: transform, opacity;
+    z-index: 200 !important;
+    pointer-events: none;
+}
+
+.bento-section {
+    position: relative;
+    user-select: none;
+}

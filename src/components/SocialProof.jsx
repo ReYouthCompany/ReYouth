@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import MagicBento from './MagicBento'
 
 const SocialProof = () => {
     const sectionRef = useRef(null)
@@ -83,19 +84,22 @@ const SocialProof = () => {
                     </p>
                 </div>
 
-                <div className="testimonials-grid stagger-children">
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} className="testimonial-card">
-                            <p className="testimonial-content">"{testimonial.content}"</p>
-                            <div className="testimonial-author">
-                                <div className="author-avatar">{testimonial.initials}</div>
-                                <div className="author-info">
-                                    <h5>{testimonial.author}</h5>
-                                    <span>{testimonial.role}</span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                {/* MagicBento Testimonials */}
+                <div className="reveal">
+                    <MagicBento
+                        testimonials={testimonials}
+                        textAutoHide={true}
+                        enableStars={true}
+                        enableSpotlight={true}
+                        enableBorderGlow={true}
+                        enableTilt={true}
+                        enableMagnetism={true}
+                        clickEffect={true}
+                        spotlightRadius={390}
+                        particleCount={12}
+                        glowColor="122, 231, 199"
+                        disableAnimations={false}
+                    />
                 </div>
 
                 <div className="metrics-row reveal">

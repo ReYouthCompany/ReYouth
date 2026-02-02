@@ -1000,6 +1000,55 @@ p {
   margin-top: auto;
 }
 
+/* MagicBento Effects for Product Cards */
+.product-card--bento {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 300px;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.product-card--bento::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+      rgba(122, 231, 199, calc(var(--glow-intensity) * 0.6)) 0%,
+      rgba(122, 231, 199, calc(var(--glow-intensity) * 0.3)) 30%,
+      transparent 60%);
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.product-card--bento:hover {
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 0 50px rgba(122, 231, 199, 0.1);
+}
+
+.bento-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+}
+
 /* ========================================
    Tech Pillars Section
    ======================================== */
