@@ -87,19 +87,19 @@ const Hero = () => {
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm-1 14.59l-3.29-3.3 1.41-1.41L11 13.76l4.88-4.88 1.42 1.41L11 16.59z" />
                             </svg>
-                            <span>NASM Certified</span>
+                            <span>Protocols based on your body</span>
                         </div>
                         <div className="trust-item">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 12.18L3.55 10.5 12 5.82l8.45 4.68L12 15.18zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
                             </svg>
-                            <span>MSc Biotechnology</span>
+                            <span>Health maintenance Guidance</span>
                         </div>
                         <div className="trust-item">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z" />
                             </svg>
-                            <span>Data Encrypted</span>
+                            <span>Secured Encrypted Health Data</span>
                         </div>
                     </div>
                 </div>
