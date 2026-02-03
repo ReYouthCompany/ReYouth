@@ -54,129 +54,33 @@ const ProblemSolution = () => {
                         </div>
                     </div>
 
-                    <div className="solution-visual reveal-right">
-                        <div className="dna-visualization">
-                            <svg viewBox="0 0 200 300" className="dna-svg">
-                                {/* DNA Helix Animation */}
-                                <defs>
-                                    <linearGradient id="helixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="#7AE7C7" />
-                                        <stop offset="100%" stopColor="#7AE7C7" stopOpacity="0.3" />
-                                    </linearGradient>
-                                </defs>
-
-                                {/* Left strand */}
-                                <path
-                                    d="M40 20 Q100 60, 40 100 Q-20 140, 40 180 Q100 220, 40 260"
-                                    fill="none"
-                                    stroke="url(#helixGradient)"
-                                    strokeWidth="3"
-                                    className="dna-strand"
-                                />
-
-                                {/* Right strand */}
-                                <path
-                                    d="M160 20 Q100 60, 160 100 Q220 140, 160 180 Q100 220, 160 260"
-                                    fill="none"
-                                    stroke="url(#helixGradient)"
-                                    strokeWidth="3"
-                                    className="dna-strand"
-                                    style={{ animationDelay: '-2s' }}
-                                />
-
-                                {/* Connecting rungs */}
-                                {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                                    <line
-                                        key={i}
-                                        x1="55"
-                                        y1={40 + i * 35}
-                                        x2="145"
-                                        y2={40 + i * 35}
-                                        stroke="#7AE7C7"
-                                        strokeWidth="2"
-                                        strokeOpacity="0.4"
-                                        className="dna-rung"
-                                        style={{ animationDelay: `${i * 0.1}s` }}
-                                    />
-                                ))}
-
-                                {/* Nodes */}
-                                {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                                    <g key={`nodes-${i}`}>
-                                        <circle
-                                            cx="55"
-                                            cy={40 + i * 35}
-                                            r="6"
-                                            fill="#7AE7C7"
-                                            className="dna-node"
-                                            style={{ animationDelay: `${i * 0.15}s` }}
-                                        />
-                                        <circle
-                                            cx="145"
-                                            cy={40 + i * 35}
-                                            r="6"
-                                            fill="#7AE7C7"
-                                            className="dna-node"
-                                            style={{ animationDelay: `${i * 0.15 + 0.05}s` }}
-                                        />
-                                    </g>
-                                ))}
-                            </svg>
+                    <div className="solution-visual reveal-right" style={{ aspectRatio: 'auto', display: 'block', height: 'auto' }}>
+                        <div style={{
+                            position: 'relative',
+                            width: '100%',
+                            maxWidth: '350px',
+                            margin: '0 auto',
+                            aspectRatio: '9/16',
+                            borderRadius: '12px',
+                            overflow: 'hidden',
+                            boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+                        }}>
+                            <iframe
+                                src="https://www.youtube.com/embed/T5qNiXacxc4?controls=0&rel=0&modestbranding=1&showinfo=0&loop=1&playlist=T5qNiXacxc4"
+                                title="reyou final"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen
+                                style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%'
+                                }}
+                            ></iframe>
                         </div>
-
-                        <style>{`
-              .dna-visualization {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-              }
-              
-              .dna-svg {
-                width: 100%;
-                height: auto;
-              }
-              
-              .dna-strand {
-                animation: dnaWave 4s ease-in-out infinite;
-              }
-              
-              .dna-rung {
-                animation: dnaGlow 2s ease-in-out infinite;
-              }
-              
-              .dna-node {
-                animation: dnaPulse 2s ease-in-out infinite;
-              }
-              
-              @keyframes dnaWave {
-                0%, 100% {
-                  stroke-dashoffset: 0;
-                }
-                50% {
-                  stroke-dashoffset: 20;
-                }
-              }
-              
-              @keyframes dnaGlow {
-                0%, 100% {
-                  stroke-opacity: 0.4;
-                }
-                50% {
-                  stroke-opacity: 0.8;
-                }
-              }
-              
-              @keyframes dnaPulse {
-                0%, 100% {
-                  opacity: 0.8;
-                  transform: scale(1);
-                }
-                50% {
-                  opacity: 1;
-                  transform: scale(1.2);
-                }
-              }
-            `}</style>
                     </div>
                 </div>
             </div>
