@@ -486,7 +486,17 @@ const MagicBento = ({
                                 <p className="magic-bento-card__quote">"{testimonial.content}"</p>
                             </div>
                             <div className="magic-bento-card__footer">
-                                <div className="magic-bento-card__avatar">{testimonial.initials}</div>
+                                <div className="magic-bento-card__avatar">
+                                    {testimonial.image ? (
+                                        <img
+                                            src={testimonial.image}
+                                            alt={testimonial.author}
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                                        />
+                                    ) : (
+                                        testimonial.initials
+                                    )}
+                                </div>
                                 <div className="magic-bento-card__author">
                                     <h4 className="magic-bento-card__name">{testimonial.author}</h4>
                                     <span className="magic-bento-card__role">{testimonial.role}</span>

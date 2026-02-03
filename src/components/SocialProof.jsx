@@ -57,19 +57,22 @@ const SocialProof = () => {
             content: "As a Gen Z professional, I always worried about my parents' health. ReYouth gave me the tools to actually do something about it. Their biological age tracking is incredible.",
             author: "Puja Kumari",
             role: "Student, 22",
-            initials: "PK"
+            initials: "PK",
+            image: "/puja kumari.jpeg"
         },
         {
             content: "The data-driven approach is what sold me. No guesswork, just science. My father's metabolic markers have improved significantly in just 6 months.",
             author: "Mohan Adhikari",
             role: "Japanese Teacher, 26",
-            initials: "MA"
+            initials: "MA",
+            image: "/mohan.jpeg"
         },
         {
             content: "I tried the Quick Detox before my wedding and the results were visible. Lost the bloat, skin was glowing. Highly recommend for anyone needing a quick reset.",
             author: "Vivek Mahato",
             role: "Marketing & Fin, 32",
-            initials: "VM"
+            initials: "VM",
+            image: "/vivek.jpeg"
         }
     ]
 
