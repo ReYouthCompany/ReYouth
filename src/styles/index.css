@@ -105,28 +105,96 @@ ol {
   min-height: 100vh;
 }
 
-/* Silk Background */
+/* Silk Background (deprecated) */
 .silk-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.6;
-  pointer-events: none;
+  display: none;
 }
 
-/* Prismatic Background */
+/* Prismatic Background (deprecated) */
 .prismatic-background {
+  display: none;
+}
+
+/* ========================================
+   Ambient Background (Lightweight Alternative)
+   ======================================== */
+.ambient-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.4;
   pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  will-change: transform;
+}
+
+.ambient-glow--primary {
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  top: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(122, 231, 199, 0.3) 0%, transparent 70%);
+  animation: ambientFloat 20s ease-in-out infinite;
+}
+
+.ambient-glow--secondary {
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  bottom: -5%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(122, 231, 199, 0.2) 0%, transparent 70%);
+  animation: ambientFloat 25s ease-in-out infinite reverse;
+}
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(122, 231, 199, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 231, 199, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 100%);
+}
+
+@keyframes ambientFloat {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(3%, 5%) scale(1.05);
+  }
+
+  50% {
+    transform: translate(-2%, 3%) scale(0.95);
+  }
+
+  75% {
+    transform: translate(4%, -2%) scale(1.02);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow {
+    animation: none;
+  }
 }
 
 /* ========================================
