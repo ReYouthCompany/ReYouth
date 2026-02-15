@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 import './CardNav.css';
 
 const CardNav = ({
@@ -16,7 +17,8 @@ const CardNav = ({
     buttonBgColor,
     buttonTextColor,
     ctaLink,
-    ctaText = 'Get Started'
+    ctaText = 'Get Started',
+    showThemeToggle = false
 }) => {
     const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
@@ -169,15 +171,18 @@ const CardNav = ({
                         )}
                     </Link>
 
-                    <a
-                        href={ctaLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="card-nav-cta-button"
-                        style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-                    >
-                        {ctaText}
-                    </a>
+                    <div className="card-nav-right">
+                        <a
+                            href={ctaLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="card-nav-cta-button"
+                            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+                        >
+                            {ctaText}
+                        </a>
+                        {showThemeToggle && <ThemeToggle />}
+                    </div>
                 </div>
 
                 <div className="card-nav-content" aria-hidden={!isExpanded}>

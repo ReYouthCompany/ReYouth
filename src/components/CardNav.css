@@ -22,6 +22,12 @@
     will-change: height;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+[data-theme="light"] .card-nav {
+    border-color: rgba(15, 184, 134, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
 .card-nav-top {
@@ -55,11 +61,12 @@
 .hamburger-line {
     width: 26px;
     height: 2px;
-    background-color: #ffffff;
+    background-color: var(--color-text-primary);
     transition:
         transform 0.25s ease,
         opacity 0.2s ease,
-        margin 0.3s ease;
+        margin 0.3s ease,
+        background-color 0.4s ease;
     transform-origin: 50% 50%;
 }
 
@@ -91,9 +98,17 @@
     font-family: 'Clash Display', sans-serif;
     font-weight: 600;
     font-size: 1rem;
-    color: #ffffff;
+    color: var(--color-text-primary);
     white-space: nowrap;
     letter-spacing: -0.02em;
+    transition: color 0.4s ease;
+}
+
+.card-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
 }
 
 .card-nav-cta-button {
@@ -163,7 +178,7 @@
     font-weight: 600;
     font-size: 1.25rem;
     letter-spacing: -0.02em;
-    color: #7AE7C7;
+    color: var(--color-accent);
 }
 
 .nav-card-links {
@@ -182,11 +197,11 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-text-secondary);
 }
 
 .nav-card-link:hover {
-    color: #7AE7C7;
+    color: var(--color-accent);
 }
 
 .nav-card-link-icon {
